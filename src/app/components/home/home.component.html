@@ -2,6 +2,16 @@
   <h2>Postagens</h2>
   <button routerLink="create" class="btn btn-light px-3">Criar postagem</button>
 </section>
-<section>
-
+<section class="row mt-3" *ngIf="posts.length > 0, else nonePost">
+  <div class="col-3" *ngFor="let post of posts">
+    <app-card [post]="post"></app-card>
+  </div>
 </section>
+
+<ng-template #nonePost>
+  <section class="row mt-3">
+    <div class="col-12">
+      <h2>Nenhum post criado</h2>
+    </div>
+  </section>
+</ng-template>
