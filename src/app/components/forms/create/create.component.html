@@ -13,14 +13,7 @@
     <div class="col-12 col-md-4 d-flex justify-content-center">
       <div>
         <h3 class="h3 mt-4" >Exemplo do card</h3>
-        <div class="card border-secondary text-dark" style="width: 18rem;">
-          <img src="https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">{{ post.title }}</h5>
-            <p class="card-text">{{ post.text }}</p>
-            <a href="#" class="btn btn-dark">Acessar post</a>
-          </div>
-        </div>
+        <app-card [post]="post" ></app-card>
       </div>
     </div>
   </div>
