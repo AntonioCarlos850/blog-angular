@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from 'src/app/interfaces/post';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-home',
@@ -6,23 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  posts = [
-    {
-      title: 'Teste 1',
-      text: 'Corpo do texto do primeiro post'
-    },
-    {
-      title: 'Teste 2',
-      text: 'Corpo do texto do segundo post'
-    },
-    {
-      title: 'Teste 3',
-      text: 'Teste de corpo de texto'
-    }
-  ]
-  constructor() { }
+  posts: Post[] = []
+  constructor(private service: PostService) { }
 
   ngOnInit(): void {
+    this.service.all().subscribe((posts) => {
+      this.posts = posts
+    })
   }
-
 }
