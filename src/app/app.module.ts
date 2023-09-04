@@ -12,6 +12,7 @@ import { CardComponent } from './components/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditComponent } from './components/forms/edit/edit.component';
 import { DeleteComponent }  from './components/forms/delete/delete.component';
+import { ShowComponent } from './components/forms/show/show.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DeleteComponent }  from './components/forms/delete/delete.component';
     HomeComponent,
     CardComponent,
     EditComponent,
-    DeleteComponent
+    DeleteComponent,
+    ShowComponent
   ],
   imports: [
     BrowserModule,
