@@ -1,0 +1,9 @@
+<section class="row delete justify-content-center">
+  <div class="col-12">
+    <h2 class="text-center">Você tem certeza que deseja deletar o post {{ post.title }}?</h2>
+  </div>
+  <div class="col-3 d-flex justify-content-around mt-4">
+    <button type="button" class="btn btn-danger" (click)="delete()">Deletar</button>
+    <button type="button" class="btn btn-light" (click)="cancel()">Cancelar</button>
+  </div>
+</section>
