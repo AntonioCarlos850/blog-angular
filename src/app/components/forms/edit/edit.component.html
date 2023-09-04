@@ -1,0 +1,25 @@
+<form>
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <div class="mb-3">
+        <label for="title" class="form-label">Titulo</label>
+        <input type="text" class="form-control" id="title" name="title" [(ngModel)]="post.title">
+      </div>
+      <div class="mb-3">
+        <label for="text" class="form-label">Texto</label>
+        <textarea class="form-control" required id="text" rows="15" name="text" [(ngModel)]="post.text"></textarea>
+      </div>
+    </div>
+    <div class="col-12 col-md-4 d-flex justify-content-center">
+      <div>
+        <h3 class="h3 mt-4" >Exemplo do card</h3>
+        <app-card [post]="post" ></app-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center mt-5">
+    <button type="submit" class="btn btn-light me-3" (click)="save()" >Salvar</button>
+    <button type="reset" class="btn btn-light" (click)="cancel()" >Cancelar</button>
+  </div>
+</form>
