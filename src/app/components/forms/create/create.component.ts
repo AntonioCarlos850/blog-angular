@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Post } from 'src/app/interfaces/post';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-form-create',
@@ -7,21 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  post = {
+  post: Post = {
     title: 'Título',
     text: 'Corpo do texto'
   }
 
-  constructor() { }
+  constructor(
+    private service: PostService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   save(){
-    alert("salvou")
+    this.service.create(this.post).subscribe(() => {
+      this.router.navigate(['/'])
+    })
   }
 
   cancel(){
-    alert("cancelou")
+    this.router.navigate(['/'])
   }
 }
