@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CreateComponent } from './components/forms/create/create.component';
 import { DeleteComponent } from './components/forms/delete/delete.component';
 import { EditComponent } from './components/forms/edit/edit.component';
+import { ShowComponent } from './components/forms/show/show.component';
 
 const routes: Routes = [
   {
@@ -21,7 +22,11 @@ const routes: Routes = [
   {
     path: 'edit/:id',
     component: EditComponent
-  }
+  },
+  {
+    path: 'show/:id',
+    component: ShowComponent
+  },
 ];
 
 @NgModule({
